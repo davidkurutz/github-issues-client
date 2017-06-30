@@ -6,12 +6,21 @@
 </template>
 
 <script>
-import Hello from './components/Hello';
+import IssuesList from './components/IssuesList';
+
+const axios = require('axios');
 
 export default {
   name: 'app',
   components: {
-    Hello,
+    IssuesList,
+  },
+  data: {
+    issues: [],
+  },
+  mounted() {
+    axios.get('https://api.github.com/repos/rails/rails/issues').then((response) => { this.issues = response.data; });
+    console.log(this.issues);
   },
 };
 </script>
