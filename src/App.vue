@@ -7,9 +7,8 @@
 </template>
 
 <script>
+import axios from 'axios';
 import IssuesList from './components/IssuesList';
-
-const axios = require('axios');
 
 export default {
   name: 'app',
